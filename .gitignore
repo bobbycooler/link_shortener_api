@@ -1,0 +1,16 @@
+venv
+.venv
+
+.env
+env
+
+db
+.db
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+db.sqlite3
+db.sqlite3-journal
