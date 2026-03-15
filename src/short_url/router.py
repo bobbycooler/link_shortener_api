@@ -14,12 +14,12 @@ from sqlalchemy import delete, select
 from pydantic import HttpUrl
 from redis.asyncio import Redis
 
-from database import get_async_session, get_redis
-from auth.models import User
-from auth.users import current_active_user, current_user_optional
-from short_url.models import URL
-from short_url.schemas import URLCreate, URLRead, URLUpdate
-from short_url.utils import update_link_stats
+from src.database import get_async_session, get_redis
+from src.auth.models import User
+from src.auth.users import current_active_user, current_user_optional
+from src.short_url.models import URL
+from src.short_url.schemas import URLCreate, URLRead, URLUpdate
+from src.short_url.utils import update_link_stats
 
 links_router = APIRouter()
 

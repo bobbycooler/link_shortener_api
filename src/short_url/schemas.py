@@ -1,6 +1,8 @@
-from pydantic import BaseModel, ConfigDict, Field, HttpUrl
 from datetime import datetime
 from typing import Optional
+import re
+
+from pydantic import BaseModel, ConfigDict, Field, HttpUrl, field_validator
 
 
 class URLBase(BaseModel):
@@ -9,6 +11,13 @@ class URLBase(BaseModel):
 
 class URLCreate(URLBase):
     custom_alias: Optional[str] = Field(None)
+
+    @field_validator("custom_alias")
+    @classmethod
+    def validate_alias(cls, v):
+        if v and not re.match(r"^[a-zA-Z0-9_-]+$", v):
+            raise ValueError("Ожидается ^[a-zA-Z0-9_-]+$")
+        return v
     expires_at: Optional[datetime] = None
 
 

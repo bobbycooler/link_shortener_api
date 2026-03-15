@@ -2,9 +2,9 @@ import asyncio
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
-from auth.router import users_router
-from short_url.router import links_router
-from short_url.utils import run_cleanup
+from src.auth.router import users_router
+from src.short_url.router import links_router
+from src.short_url.utils import run_cleanup
 
 
 @asynccontextmanager

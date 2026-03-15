@@ -10,3 +10,5 @@ SECRET = os.getenv("SECRET")
 REDIS_URL = os.getenv("REDIS_URL")
 
 LINK_NO_USE_DAYS = 30
+
+TEST_DATABASE_URL = os.getenv("TEST_DATABASE_URL")

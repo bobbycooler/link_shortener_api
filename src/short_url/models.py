@@ -6,7 +6,8 @@ from sqlalchemy import (BigInteger,
                         DateTime)
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
-from database import Base
+
+from src.database import Base
 
 
 class URL(Base):
@@ -28,4 +29,4 @@ class URL(Base):
                        ForeignKey("user.id", ondelete="CASCADE"),
                        nullable=True)
 
-    author = relationship("User", backref="short_url")
+    author = relationship("src.auth.models.User", backref="short_url")

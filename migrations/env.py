@@ -1,8 +1,8 @@
 import sys
 from os.path import abspath, dirname, join
 
-backend_path = abspath(join(dirname(__file__), "..", "src"))
-sys.path.insert(0, backend_path)
+root_path = abspath(join(dirname(__file__), ".."))
+sys.path.insert(0, root_path)
 
 import asyncio
 from logging.config import fileConfig
@@ -13,10 +13,10 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from alembic import context
 
-from config import DATABASE_URL, DATABASE_USED
-from database import Base
-from auth.models import User
-from short_url.models import URL
+from src.config import DATABASE_URL, DATABASE_USED
+from src.database import Base
+from src.auth.models import User
+from src.short_url.models import URL
 
 
 # this is the Alembic Config object, which provides

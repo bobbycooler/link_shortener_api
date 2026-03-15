@@ -1,0 +1,7 @@
+[run]
+source = src
+omit =
+    src/database.py
+    src/config.py
+    src/main.py
+concurrency = greenlet,thread

@@ -97,3 +97,11 @@
     "password": "secret_password"
 }
 ```
+
+## Запуск тестов и отчет о покрытии (Coverage)
+
+Для запуска всех тестов с выводом пропущенных строк в терминал и генерацией HTML-отчета:
+
+```bash
+pytest --cov=src --cov-report=term-missing --cov-report=html
+```

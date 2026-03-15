@@ -4,7 +4,7 @@ import redis.asyncio as redis
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-from config import DATABASE_URL, REDIS_URL
+from src.config import DATABASE_URL, REDIS_URL
 
 
 Base = declarative_base()
